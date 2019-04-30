@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tzg-boot:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>tzg-boot</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="tzg-boot-1.0.1.war">
+      <element id="artifact" artifact-name="tzg-boot:war exploded" />
+    </root>
+  </artifact>
+</component>
