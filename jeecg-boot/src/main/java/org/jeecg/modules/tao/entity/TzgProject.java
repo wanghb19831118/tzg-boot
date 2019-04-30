@@ -23,27 +23,27 @@ public class TzgProject implements Serializable {
     
 	/**项目id*/
 	@TableId(type = IdType.UUID)
-	private java.lang.String id;
+	private String id;
 	/**项目名称*/
 	@Excel(name = "项目名称", width = 15)
-	private java.lang.String proName;
+	private String proName;
 	/**项目简介*/
 	@Excel(name = "项目简介", width = 15)
-	private java.lang.String proDes;
+	private String proDes;
 	/**创建人*/
 	@Excel(name = "创建人", width = 15)
-	private java.lang.String createBy;
+	private String createBy;
 	/**创建时间*/
 	@Excel(name = "创建时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private java.util.Date createTime;
+	private Date createTime;
 	/**修改人*/
 	@Excel(name = "修改人", width = 15)
-	private java.lang.String updateBy;
+	private String updateBy;
 	/**修改时间*/
 	@Excel(name = "修改时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private java.util.Date updateTime;
+	private Date updateTime;
 }

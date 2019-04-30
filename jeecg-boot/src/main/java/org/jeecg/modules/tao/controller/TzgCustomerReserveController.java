@@ -8,9 +8,12 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.shiro.SecurityUtils;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.system.query.QueryGenerator;
 import org.jeecg.common.util.oConvertUtils;
+import org.jeecg.modules.system.entity.SysUser;
 import org.jeecg.modules.tao.entity.TzgCustomerReserve;
 import org.jeecg.modules.tao.service.ITzgCustomerReserveService;
 
@@ -186,13 +189,14 @@ public class TzgCustomerReserveController {
           e.printStackTrace();
       }
 
+	  SysUser sysUser = (SysUser) SecurityUtils.getSubject().getPrincipal();
       //Step.2 AutoPoi 导出Excel
       ModelAndView mv = new ModelAndView(new JeecgEntityExcelView());
       List<TzgCustomerReserve> pageList = tzgCustomerReserveService.list(queryWrapper);
       //导出文件名称
       mv.addObject(NormalExcelConstants.FILE_NAME, "储备客户表列表");
       mv.addObject(NormalExcelConstants.CLASS, TzgCustomerReserve.class);
-      mv.addObject(NormalExcelConstants.PARAMS, new ExportParams("储备客户表列表数据", "导出人:Jeecg", "导出信息"));
+      mv.addObject(NormalExcelConstants.PARAMS, new ExportParams("储备客户表列表数据", "导出信息"));
       mv.addObject(NormalExcelConstants.DATA_LIST, pageList);
       return mv;
   }
@@ -211,7 +215,7 @@ public class TzgCustomerReserveController {
       for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
           MultipartFile file = entity.getValue();// 获取上传文件对象
           ImportParams params = new ImportParams();
-          params.setTitleRows(2);
+          params.setTitleRows(1);
           params.setHeadRows(1);
           params.setNeedSave(true);
           try {
