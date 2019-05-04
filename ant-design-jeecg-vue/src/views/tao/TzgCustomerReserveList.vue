@@ -16,23 +16,23 @@
               <a-input placeholder="请输入负责人姓名" v-model="queryParam.username"></a-input>
             </a-form-item>
           </a-col>
-        <template v-if="toggleSearchStatus">
-        <a-col :md="6" :sm="8">
-            <a-form-item label="店铺名称">
-              <a-input placeholder="请输入店铺名称" v-model="queryParam.shopname"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="店铺链接">
-              <a-input placeholder="请输入店铺链接" v-model="queryParam.shopurl"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="店家旺旺">
-              <a-input placeholder="请输入店家旺旺" v-model="queryParam.accountW"></a-input>
-            </a-form-item>
-          </a-col>
-        </template>
+          <template v-if="toggleSearchStatus">
+            <a-col :md="6" :sm="8">
+              <a-form-item label="店铺名称">
+                <a-input placeholder="请输入店铺名称" v-model="queryParam.shopname"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
+              <a-form-item label="店铺链接">
+                <a-input placeholder="请输入店铺链接" v-model="queryParam.shopurl"></a-input>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="8">
+              <a-form-item label="店家旺旺">
+                <a-input placeholder="请输入店家旺旺" v-model="queryParam.accountW"></a-input>
+              </a-form-item>
+            </a-col>
+          </template>
           <a-col :md="6" :sm="8" >
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
               <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>
@@ -131,87 +131,87 @@
             customRender:function (t,r,index) {
               return parseInt(index)+1;
             }
-           },
-		   {
+          },
+          {
             title: '负责人id',
             align:"center",
             dataIndex: 'userid'
-           },
-		   {
+          },
+          {
             title: '负责人姓名',
             align:"center",
             dataIndex: 'username'
-           },
-		   {
+          },
+          {
             title: '店铺名称',
             align:"center",
             dataIndex: 'shopname'
-           },
-		   {
+          },
+          {
             title: '店铺链接',
             align:"center",
             dataIndex: 'shopurl'
-           },
-		   {
+          },
+          {
             title: '店家旺旺',
             align:"center",
             dataIndex: 'accountW'
-           },
-		   {
+          },
+          {
             title: '信用',
             align:"center",
             dataIndex: 'credit'
-           },
-		   {
+          },
+          {
             title: '好评率',
             align:"center",
             dataIndex: 'favorableRate'
-           },
-		   {
+          },
+          {
             title: '描述相符DSR',
             align:"center",
             dataIndex: 'dsr'
-           },
-		   {
+          },
+          {
             title: '所在地',
             align:"center",
             dataIndex: 'address'
-           },
-		   {
+          },
+          {
             title: '商品数',
             align:"center",
             dataIndex: 'productNum'
-           },
-		   {
+          },
+          {
             title: '月销笔数',
             align:"center",
             dataIndex: 'saleMonthNum'
-           },
-		   {
+          },
+          {
             title: '开店时间',
             align:"center",
             dataIndex: 'createShopTime'
-           },
-		   {
+          },
+          {
             title: '客服电话',
             align:"center",
             dataIndex: 'servicePhone'
-           },
-		   {
+          },
+          {
             title: '收藏数',
             align:"center",
             dataIndex: 'collectionNum'
-           },
-		   {
+          },
+          {
             title: '分析',
             align:"center",
             dataIndex: 'analysisUrl'
-           },
-		   {
+          },
+          {
             title: '监控',
             align:"center",
             dataIndex: 'monitorUrl'
-           },
+          },
           {
             title: '操作',
             dataIndex: 'action',
@@ -219,27 +219,27 @@
             scopedSlots: { customRender: 'action' },
           }
         ],
-		url: {
+        url: {
           list: "/tao/tzgCustomerReserve/list",
           delete: "/tao/tzgCustomerReserve/delete",
           deleteBatch: "/tao/tzgCustomerReserve/deleteBatch",
           exportXlsUrl: "tao/tzgCustomerReserve/exportXls",
           importExcelUrl: "tao/tzgCustomerReserve/importExcel",
-       },
-    }
-  },
-  computed: {
-    importExcelUrl: function(){
-      return `${window._CONFIG['domianURL']}/${this.url.importExcelUrl}`;
-    }
-  },
+        },
+      }
+    },
+    computed: {
+      importExcelUrl: function(){
+        return `${window._CONFIG['domianURL']}/${this.url.importExcelUrl}`;
+      }
+    },
     methods: {
-     
+
     }
   }
 </script>
 <style lang="less" scoped>
-/** Button按钮间距 */
+  /** Button按钮间距 */
   .ant-btn {
     margin-left: 3px
   }
