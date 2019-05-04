@@ -12,6 +12,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.shiro.SecurityUtils;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.aspect.annotation.AutoLog;
 import org.jeecg.common.system.query.QueryGenerator;
@@ -20,6 +21,7 @@ import org.jeecg.common.util.RedisUtil;
 import org.jeecg.common.util.oConvertUtils;
 import org.jeecg.modules.demo.test.entity.JeecgDemo;
 import org.jeecg.modules.demo.test.service.IJeecgDemoService;
+import org.jeecg.modules.system.entity.SysUser;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.def.NormalExcelConstants;
 import org.jeecgframework.poi.excel.entity.ExportParams;
@@ -259,6 +261,7 @@ public class JeecgDemoController {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
+		SysUser sysUser = (SysUser) SecurityUtils.getSubject().getPrincipal();
 
 		//Step.2 AutoPoi 导出Excel
 		ModelAndView mv = new ModelAndView(new JeecgEntityExcelView());
@@ -268,7 +271,7 @@ public class JeecgDemoController {
 		//注解对象Class
 		mv.addObject(NormalExcelConstants.CLASS,JeecgDemo.class);
 		//自定义表格参数
-		mv.addObject(NormalExcelConstants.PARAMS,new ExportParams("自定义导出Excel模板内容标题","导出人:Jeecg","导出信息"));
+		mv.addObject(NormalExcelConstants.PARAMS,new ExportParams("自定义导出Excel模板内容标题","导出人:"+sysUser.getUsername(),"导出信息"));
 		//导出数据列表
 		mv.addObject(NormalExcelConstants.DATA_LIST,pageList);
 		return mv;

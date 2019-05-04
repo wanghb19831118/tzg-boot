@@ -23,71 +23,71 @@ public class TzgCustomerReserve implements Serializable {
     
 	/**id*/
 	@TableId(type = IdType.UUID)
-	private String id;
+	private java.lang.String id;
 	/**负责人id*/
-	@Excel(name = "负责人id", width = 15)
-	private String userid;
+//	@Excel(name = "负责人id", width = 15)
+	private java.lang.String userid;
 	/**负责人姓名*/
-	@Excel(name = "负责人姓名", width = 15)
-	private String username;
+//	@Excel(name = "负责人姓名", width = 15)
+	private java.lang.String username;
 	/**店铺名称*/
 	@Excel(name = "店铺名称", width = 15)
-	private String shopname;
+	private java.lang.String shopname;
 	/**店铺链接*/
 	@Excel(name = "店铺链接", width = 15)
-	private String shopurl;
+	private java.lang.String shopurl;
 	/**店家旺旺*/
 	@Excel(name = "店家旺旺", width = 15)
-	private String accountW;
+	private java.lang.String accountW;
 	/**信用*/
 	@Excel(name = "信用", width = 15)
-	private String credit;
+	private java.lang.String credit;
 	/**好评率*/
 	@Excel(name = "好评率", width = 15)
-	private String favorableRate;
+	private java.lang.String favorableRate;
 	/**描述相符DSR*/
 	@Excel(name = "描述相符DSR", width = 15)
-	private String dsr;
+	private java.lang.String dsr;
 	/**所在地*/
 	@Excel(name = "所在地", width = 15)
-	private String address;
+	private java.lang.String address;
 	/**商品数*/
 	@Excel(name = "商品数", width = 15)
-	private Integer productNum;
+	private java.lang.Integer productNum;
 	/**月销笔数*/
 	@Excel(name = "月销笔数", width = 15)
-	private Integer saleMonthNum;
+	private java.lang.Integer saleMonthNum;
 	/**开店时间*/
 	@Excel(name = "开店时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private Date createShopTime;
+	private java.util.Date createShopTime;
 	/**客服电话*/
 	@Excel(name = "客服电话", width = 15)
-	private String servicePhone;
+	private java.lang.String servicePhone;
 	/**收藏数*/
 	@Excel(name = "收藏数", width = 15)
-	private Integer collectionNum;
+	private java.lang.Integer collectionNum;
 	/**分析*/
 	@Excel(name = "分析", width = 15)
-	private String analysisUrl;
+	private java.lang.String analysisUrl;
 	/**监控*/
 	@Excel(name = "监控", width = 15)
-	private String monitorUrl;
+	private java.lang.String monitorUrl;
 	/**创建人*/
-	@Excel(name = "创建人", width = 15)
-	private String createBy;
+//	@Excel(name = "创建人", width = 15)
+	private java.lang.String createBy;
 	/**创建时间*/
-	@Excel(name = "创建时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
+//	@Excel(name = "创建时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private Date createTime;
+	private java.util.Date createTime;
 	/**修改人*/
-	@Excel(name = "修改人", width = 15)
-	private String updateBy;
+//	@Excel(name = "修改人", width = 15)
+	private java.lang.String updateBy;
 	/**修改时间*/
-	@Excel(name = "修改时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
+//	@Excel(name = "修改时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private Date updateTime;
+	private java.util.Date updateTime;
 }

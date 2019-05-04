@@ -23,33 +23,33 @@ public class TzgCompany implements Serializable {
     
 	/**公司ID*/
 	@TableId(type = IdType.UUID)
-	private java.lang.String id;
+	private String id;
 	/**公司名称*/
 	@Excel(name = "公司名称", width = 15)
-	private java.lang.String companyName;
+	private String companyName;
 	/**公司简称*/
 	@Excel(name = "公司简称", width = 15)
-	private java.lang.String companyShort;
+	private String companyShort;
 	/**公司代码*/
 	@Excel(name = "公司代码", width = 15)
-	private java.lang.String companyCode;
+	private String companyCode;
 	/**状态  1/正常,2/冻结*/
 	@Excel(name = "状态", width = 15)
-	private java.lang.Integer status;
+	private Integer status;
 	/**创建人*/
 	@Excel(name = "创建人", width = 15)
-	private java.lang.String createBy;
+	private String createBy;
 	/**创建时间*/
 	@Excel(name = "创建时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private java.util.Date createTime;
+	private Date createTime;
 	/**最后修改人ID*/
 	@Excel(name = "最后修改人ID", width = 15)
-	private java.lang.String updateBy;
+	private String updateBy;
 	/**最后修改时间*/
 	@Excel(name = "最后修改时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private java.util.Date updateTime;
+	private Date updateTime;
 }
